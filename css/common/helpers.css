@@ -1,0 +1,31 @@
+ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+textarea, input { outline: none; }
+
+
+@-webkit-keyframes reset {
+	to {
+		-webkit-transform : translate3d(0px,0px,0px);
+		opacity: 1;
+	}
+}
+@keyframes reset {
+	to {
+		transform : translate3d(0px,0px,0px);
+		opacity: 1;
+	}
+}
+
+.reset-animation {
+}

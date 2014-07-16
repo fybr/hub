@@ -1,0 +1,55 @@
+
+	<!DOCTYPE html >
+	<html ng-app="hub">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>fybr.hub</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" type="image/png" href="" />
+
+		<!-- Vendor -->
+		<link rel="stylesheet" href="css/vendor/normalize.css" />
+		<link rel="stylesheet" href="css/vendor/cloak.css" />
+
+		<!-- Common -->
+		<link rel="stylesheet" href="css/common/helpers.css" />
+
+		<!-- Hub -->
+		<link rel="stylesheet" href="css/hub/layout.css" />
+		<link rel="stylesheet" href="css/hub/sms.css" />
+
+
+	</head>
+	<body class="ng-cloak" >
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li class="active">
+						<span>Texts</span>	
+					</li>
+					<li >
+						<span>Notifications</span>	
+					</li>
+				</ul>
+			</nav>
+		</header>	
+		<div class="root ng-cloak" ng-controller="root">
+			<div ng-include="'view/sms.html'"></div>
+		</div>
+
+
+		<!-- Libraries -->
+		<script src="js/vendor/angular.min.js"></script>
+		<script src="js/vendor/lodash.js"></script>
+		<script src="js/vendor/reconnecting-websocket.js"></script>
+
+		<!-- Hub -->
+		<script src="js/hub/module.js" ></script>
+		<script src="js/hub/controllers.js"></script>
+		<script src="js/hub/directives.js"></script>
+	</body>
+	</html>

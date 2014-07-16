@@ -1,0 +1,12 @@
+{
+  "name": "Hub",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "resizable": true,
+    "fullscreen": false,
+    "title": "hub",
+    "width": 1024,
+    "height": 768 
+  }
+}

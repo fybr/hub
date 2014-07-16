@@ -1,0 +1,223 @@
+.contacts {
+	position: absolute;
+	right: 700px;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	background: #FFFFFF;
+	border-right: 1px solid #EFEEEE;
+}
+
+.contacts .title {
+	font-size: 0.9em;
+	color: #aab4b5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	border-bottom: 1px solid #EFEEEE;
+	padding: 25px 30px;
+	overflow: hidden;
+}
+
+.contacts .title .content {
+	float: left;
+	line-height: 39px;
+} 
+
+.contacts .title .new {
+	float: right;
+	color: #45A7B9;
+	padding: 8px 0px;
+	border-radius: 100px;
+	width: 100px;
+	text-align: center;
+	font-size: 0.85em;
+	border: 3px solid #45A7B9;
+	font-weight: 700;  
+}
+
+.contacts .contact {
+	padding: 18px 25px;
+	cursor: pointer;
+	overflow: hidden;
+	border-bottom: 1px solid #EFEEEE;
+	border-left: 0px solid #45A7B9;
+	transition: all 0.2s;
+}
+
+.contacts .contact.active {
+	border-left-width: 5px;
+	background: #f3f5f6;
+}
+
+.contacts .contact .details {
+	float: left;
+	margin-top: 6px;
+}
+
+.contacts .contact .name {
+	font-weight: 700;
+	color: gray;
+	font-size: 1em;
+}
+
+.contacts .contact .number {
+	font-size: 0.9em;
+	color: #999696;
+	font-weight: 600;
+}
+
+
+.contacts .contact .wrap {
+	position: relative;
+}
+
+.contacts .contact .circle {
+	width: 55px;
+	height: 55px;
+	line-height: 40px;
+	border-radius: 100%;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 18px;
+	float: left;
+	text-align: center;
+	color: white;
+	font-size: 0.9em;
+	font-weight: bold;
+	border: 3px solid #aab4b5;
+	padding: 3px;
+}
+
+.contacts .contact .circle.unread {
+	background: #ec7b65;
+	position: absolute;
+	left: 0px;
+	opacity: 0;
+	border-color: white;
+	top: 0px;
+}
+
+.contacts .contact .circle.unread.show {
+	opacity: 1;
+}
+
+
+.contacts .contact.active .circle {
+	border-color: #45A7B9;
+}
+
+
+.thread {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	border-right: 1px solid #DDD;
+	right: 0px;
+	width: 700px;
+	overflow-y: auto;
+}
+
+.thread .message {
+	position: relative;
+	margin-bottom: 20px;
+	overflow: hidden;
+	width: 100%;
+	min-height: 50px;
+}
+
+.thread .message.other {
+	-webkit-transform: translate3d(-150px, 0px, 0px);
+	transform: translate3d(-150px, 0px, 0px);
+	-webkit-animation: reset 400ms cubic-bezier(0.165,0.84,0.44,1) forwards;
+	animation: reset 400ms cubic-bezier(0.165,0.84,0.44,1) forwards;
+}
+
+.thread .message.me {
+	-webkit-transform: translate3d(150px, 0px, 0px);
+	transform: translate3d(150px, 0px, 0px);
+	-webkit-animation: reset 400ms cubic-bezier(0.165,0.84,0.44,1) forwards;
+	animation: reset 400ms cubic-bezier(0.165,0.84,0.44,1) forwards;
+}
+
+.thread .scroll {
+	padding: 40px;
+	position: absolute;
+	top: 0px;
+	bottom: 106px;
+	overflow: hidden;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.thread .info {
+	height: 90px;
+	background: #EC7B65;
+	color: white;
+	text-align: center;
+	line-height: 90px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	letter-spacing: 2px;
+	display: none;
+}
+
+.thread .message img {
+	width: 50px;
+	height: 50px;
+	float: left;
+	background: gray;
+	border-radius: 100%;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+}
+
+.thread .message .bubble {
+	font-size: 0.9em;
+}
+
+.thread .message.me {
+
+}
+
+.thread .message.me .texts {
+	margin-left: 0px;
+	margin-right: 70px;
+	background: #f3f5f6;
+	float: right;
+}
+
+.thread .message.me img {
+	right: 0px;
+}
+
+.thread .message .texts {
+	margin-left: 70px;
+	border: 2px solid #f3f5f6;
+	border-radius: 6px;
+	padding: 15px;
+	font-weight: 600;
+	color: #9ea5a8;
+	float: left;
+}
+
+.response {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 20px;
+	background: white;
+	border-top: 1px solid #edf0f1;
+	width: 700px;
+}
+
+.response textarea {
+	width: 100%;
+	border: 1px solid #edf0f1;
+	font-size: 0.8em;
+	height: 60px;
+	padding: 10px;
+	border-radius: 6px;
+}

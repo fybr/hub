@@ -1,0 +1,33 @@
+<div class="sms" ng-controller="sms">
+	<div class="contacts">
+		<div class="title">
+			<div class="content">Threads</div>
+			<div class="new">New</div>
+		</div>
+		<div ng-class="{ active : active == thread }" ng-click="activate(thread)" class="contact" ng-repeat="thread in threads | orderBy:['unread']:true ">
+			<div class="wrap">
+				<img error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" class="circle" ng-src="{{ contacts[thread.id].picture }}" />
+				<div ng-class="{show : thread.unread > 0}" class="circle unread" > {{ thread.unread }} </div>
+			</div>
+			<div class="details">
+				<div class="name">{{contacts[thread.id].name}}</div>
+				<div class="number">{{  thread.id }}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="thread">
+		<div class="info">{{ contacts[active.id].name }}</div>
+		<div scroll class="scroll" ng-if="active">
+			<div ng-repeat="message in active.messages" ng-class="{me : message.from == 'me', other : message.from != 'me'}" class="message reset-animation">
+				<img error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" ng-src="{{ contacts[message.from].picture }} " />
+				<div class="texts">
+					<div class="bubble" ng-repeat="text in message.texts track by $index"> {{ text }} </div>
+				</div>
+			</div>
+		</div>
+		<div class="response">
+			<textarea ng-enter="send()" ng-model="message.text"></textarea>
+		</div>
+	</div>
+</div>

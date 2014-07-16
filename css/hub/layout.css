@@ -1,0 +1,86 @@
+html {
+	font-family: 'Open Sans', sans-serif;	
+	font-size: 100%;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 800;
+	src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+
+header {
+	background: #374249;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 70px;
+	line-height: 70px;
+}
+
+header .logo {
+	background: #45A7B9;
+	width: 110px;
+	height: 100%;
+	float: left;
+}
+
+.root {
+	position: absolute;
+	left: 0px;
+	top: 70px;
+	right: 0px;
+	bottom: 0px;
+	background: white;
+}
+
+header nav {
+	float: left;
+}
+
+header nav ul li {
+	float: left;
+	width: 150px;
+	text-align: center;
+	color: white;
+	font-size: 0.8em;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+header nav ul li span {
+	padding: 0px 2px 2px;
+	color: #767f83;
+}
+
+header nav ul li.active span {
+	border-bottom: 2px solid #45A7B9;
+	color: white;
+}
