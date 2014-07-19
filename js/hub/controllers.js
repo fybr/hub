@@ -91,7 +91,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 		}
 
 		message.texts.push(model.message);
-		thread.modified = model.created;
+		thread.modified = (moment(model.created).format("MMM Do"));
 
 		if(initialized) {
 			message.animate++;
