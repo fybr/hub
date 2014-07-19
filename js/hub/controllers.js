@@ -19,7 +19,6 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 
 	$scope.contacts = {};
 
-	$scope.active = $scope.threads[0];
 	$scope.message = { text : "" };
 
 	$scope.send = function() {
@@ -71,7 +70,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 			$scope.threads.push(thread);
 		}
 
-		if(!$scope.active)
+		if(!initialized)
 			$scope.active = thread;
 
 		var message = _.last(thread.messages);
@@ -116,7 +115,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 				parse(value);
 			})
 			initialized = true;
-			$scope.active = $scope.threads[0];
+			//$scope.active = $scope.threads[0];
 		})
 	})
 
