@@ -66,7 +66,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 				unread : 0, 
 				id : model.thread, 
 				messages : [], 
-				priority : 0 
+				priority : 0,
 			};
 			$scope.threads.push(thread);
 		}
@@ -91,7 +91,8 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 		}
 
 		message.texts.push(model.message);
-		thread.modified = (moment(model.created).format("MMM Do"));
+		thread.date = (moment(model.created).format("MMM Do"));
+		thread.modified = model.created;
 
 		if(initialized) {
 			message.animate++;
