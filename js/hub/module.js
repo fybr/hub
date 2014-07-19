@@ -1,4 +1,4 @@
-var app = angular.module('hub', []);
+var app = angular.module('hub', ["angularMoment"]);
 
 app.config(['$httpProvider', '$sceDelegateProvider', function($httpProvider, $sceDelegateProvider) {
 	

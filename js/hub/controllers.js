@@ -34,11 +34,9 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 		$scope.active = thread;
 		$scope.active.priority = 1000;
 		thread.unread = 0;
-		console.log(thread);
 	}
 
 	$scope.getLast = function(thread) {
-		return "";
 		if(thread.messages.length == 0)
 			return "";
 		var message = _.last(thread.messages);
@@ -82,23 +80,24 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 				from : model.from,
 				created : new Date(),
 				texts : [],
-				animate : 0
+				animate : 0,
 			}
 			thread.messages.push(message);
 		}
-		console.log(message.from);
+
 		if(message.from != "me" && initialized) {
 			thread.unread++;
 			notif.play();
 		}
 
 		message.texts.push(model.message);
+		thread.modified = model.created;
+
 		if(initialized) {
 			message.animate++;
 		}
 
 		if($scope.active != undefined && !$scope.$$phase) {
-			console.log("Applying...");
 			$scope.$apply();
 		}
 	}

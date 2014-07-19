@@ -57,6 +57,12 @@
 	margin-left: 80px;
 }
 
+.contacts .contact .date {
+	float: right;
+	font-size: 0.9em;
+	color: #999696;
+}
+
 .contacts .contact .name {
 	font-weight: 700;
 	color: gray;
