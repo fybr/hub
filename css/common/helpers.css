@@ -16,14 +16,21 @@ textarea, input { outline: none; }
 
 @-webkit-keyframes reset {
 	to {
-		-webkit-transform : translate3d(0px,0px,0px);
-		opacity: 1;
+		-webkit-transform : translate3d(0px,0px,0px) scale(1,1);
+		opacity: 1;	
+		height: auto;
+		top:0px;
+		left: 0px;
 	}
 }
 @keyframes reset {
 	to {
-		transform : translate3d(0px,0px,0px);
+		transform : translate3d(0px,0px,0px) scale(1,1);
 		opacity: 1;
+		height: auto;
+		top:0px;
+		left: 0px;
+
 	}
 }
 

@@ -43,6 +43,8 @@
 	border-bottom: 1px solid #EFEEEE;
 	border-left: 0px solid #45A7B9;
 	transition: all 0.2s;
+	position: relative;
+	min-height: 80px;
 }
 
 .contacts .contact.active {
@@ -52,7 +54,7 @@
 
 .contacts .contact .details {
 	float: left;
-	margin-top: 6px;
+	margin-left: 80px;
 }
 
 .contacts .contact .name {
@@ -68,8 +70,18 @@
 }
 
 
+.contacts .contact .preview {
+	font-size: 0.9em;
+	color: #999696;
+	font-weight: 500;
+	font-style: italic;
+}
+
+
 .contacts .contact .wrap {
-	position: relative;
+	position: absolute;
+	top: 50%;
+	margin-top: -27px;
 }
 
 .contacts .contact .circle {
@@ -124,6 +136,7 @@
 	overflow: hidden;
 	width: 100%;
 	min-height: 50px;
+	max-height: initial;
 }
 
 .thread .message.other {
@@ -176,6 +189,15 @@
 
 .thread .message .bubble {
 	font-size: 0.9em;
+	opacity: 0;
+	-webkit-animation: reset 500ms cubic-bezier(0.165,0.84,0.44,1) forwards;
+	animation: reset 500ms cubic-bezier(0.165,0.84,0.44,1) forwards;
+	position: relative;
+	left: -30px;
+}
+
+.thread .message.me .bubble {
+	left: 30px;
 }
 
 .thread .message.me {
@@ -187,6 +209,7 @@
 	margin-right: 70px;
 	background: #f3f5f6;
 	float: right;
+	max-width: calc(100% - 70px);
 }
 
 .thread .message.me img {
@@ -201,6 +224,7 @@
 	font-weight: 600;
 	color: #9ea5a8;
 	float: left;
+	word-wrap: break-word;
 }
 
 .response {

@@ -12,6 +12,7 @@
 			<div class="details">
 				<div class="name">{{contacts[thread.id].name}}</div>
 				<div class="number">{{  thread.id }}</div>
+				<div class="preview">{{  getLast(thread) }}</div>
 			</div>
 		</div>
 	</div>
@@ -20,7 +21,7 @@
 		<div class="info">{{ contacts[active.id].name }}</div>
 		<div scroll class="scroll" ng-if="active">
 			<div ng-repeat="message in active.messages" ng-class="{me : message.from == 'me', other : message.from != 'me'}" class="message reset-animation">
-				<img error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" ng-src="{{ contacts[message.from].picture }} " />
+				<img animate="message.animate" error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" ng-src="{{ contacts[message.from].picture }} " />
 				<div class="texts">
 					<div class="bubble" ng-repeat="text in message.texts track by $index"> {{ text }} </div>
 				</div>

@@ -34,3 +34,24 @@ app.directive('error', function() {
         })
     };
 });
+
+
+app.directive("animate", [function() {
+    return function (scope, element, attr) {
+
+        var apply = function() {
+            element.removeClass("animate");
+            if(attr.hasOwnProperty("hide"))
+                element.addClass("ng-hide");
+        }
+
+        element.on("webkitAnimationEnd oanimationend msAnimationEnd animationend", apply);
+
+        element.on("transitionend webkitTransitionEnd", apply)
+
+        scope.$watch(attr.animate, function(nv, ov) {
+            if(!nv) return;
+            element.addClass("animate");
+        })
+    }
+}]);
