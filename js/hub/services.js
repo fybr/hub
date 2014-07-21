@@ -8,17 +8,21 @@ app.factory("api", ["$http", "$cookies", function($http, $cookies) {
 		session : "",
 		login : function(email, password) {
 			if(result.session) return;
-			$http.post(root + "users/login", {email : email, password : password}).success(function(data) {
+			var promise = $http.post(root + "users/login", {email : email, password : password});
+			promise.success(function(data) {
 				$cookies.session = data;
 				initialize();
 			});
+			return promise;
 		},
 		register : function(email, password) {
 			if(result.session) return;
-			$http.post(root + "users", {email : email, password : password}).success(function(data) {
+			var promise = $http.post(root + "users", {email : email, password : password});
+			promise.success(function(data) {
 				$cookies.session = data;
 				initialize();
 			});
+			return promise;
 		},
 		events : function(type) {
 			return $http.get(root + "users/events/" + type + "?session=" + result.session);
