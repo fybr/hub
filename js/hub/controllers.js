@@ -8,21 +8,19 @@ app.controller('root', ['$scope', '$http', function($scope, $http) {
 	
 }])
 
-app.controller('sms', ['$scope', '$http', function($scope, $http) {
+app.controller('sms', ['$scope', '$http', 'api', function($scope, $http, api) {
+
+	api.login("dharun@ly.ht", "lol");
 
 	var root = "http://api.fybr.ws/";
-
-	var session = "2d044ab4-c422-4827-8baa-6998cdd7a22d";
 	var notif = new Audio("/sounds/hollow.wav");
 
 	$scope.threads = [];
-
 	$scope.contacts = {};
-
 	$scope.message = { text : "" };
 
 	$scope.send = function() {
-		$http.post(root + "users/devices/push?session=" + session, { message : $scope.message.text, number : $scope.active.id, type : "sms"  })
+		api.send({ message : $scope.message.text, number : $scope.active.id, type : "sms"  })
 		$scope.message.text = "";
 		$scope.active.unread = 0;
 	}
@@ -47,14 +45,9 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 		return text;
 	}
 
-	var ws = new ReconnectingWebSocket("ws://api.fybr.ws/hose"); 
-	ws.onmessage = function(evt) {
-		parse(JSON.parse(evt.data));
-	}
 
 	var initialized = false;
 	function parse(data) {
-		if(data.type != "sms") return;
 		var model = data;
 		var thread = _.find($scope.threads, function(t) {
 			return t.id == model.thread; 
@@ -91,7 +84,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 
 		message.texts.push(model.message);
 		thread.date = (moment(model.created).format("MMM Do"));
-		thread.modified = model.created;
+		thread.last = model.id;
 
 		if(initialized) {
 			message.animate++;
@@ -102,21 +95,19 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 		}
 	}
 
-	$http.get(root + "users/events/contact?session=" + session).then(function(ev) {
-		_.forEach(ev.data, function(value) {
+	api.events("contact").success(function(contacts) {
+		_.forEach(contacts, function(value) {
 			$scope.contacts[value.number] = value;
 		});
 
-
-		$http.get(root + "users/events/sms?session=" + session).then(function(ev) {
-			_.forEach(_.sortBy(ev.data, function(value) {
-				return value.created;
-			}), function(value) {
+		api.events("sms").success(function(texts) {
+			_.forEach(texts, function(value) {
 				parse(value);
 			})
 			initialized = true;
-			//$scope.active = $scope.threads[0];
 		})
-	})
+
+	});
+	api.on("sms", parse)
 
 }])

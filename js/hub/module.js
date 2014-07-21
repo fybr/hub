@@ -1,4 +1,4 @@
-var app = angular.module('hub', ["angularMoment"]);
+var app = angular.module('hub', ["angularMoment", "ngCookies"]);
 
 app.config(['$httpProvider', '$sceDelegateProvider', function($httpProvider, $sceDelegateProvider) {
 	

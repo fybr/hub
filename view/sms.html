@@ -4,7 +4,7 @@
 			<div class="content">Threads</div>
 			<div class="new">New</div>
 		</div>
-		<div ng-class="{ active : active == thread }" ng-click="activate(thread)" class="contact" ng-repeat="thread in threads | orderBy:['modified']:true ">
+		<div ng-class="{ active : active == thread }" ng-click="activate(thread)" class="contact" ng-repeat="thread in threads | orderBy:['last']:true ">
 			<div class="wrap">
 				<img error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" class="circle" ng-src="{{ contacts[thread.id].picture }}" />
 				<div ng-class="{show : thread.unread > 0}" class="circle unread" > {{ thread.unread }} </div>
