@@ -5,6 +5,7 @@
 	right: 0px;
 	left: 0px;
 	background: #374249;
+	z-index: 10000;
 }
 
 .login .focus {
