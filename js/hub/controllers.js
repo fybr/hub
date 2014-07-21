@@ -20,6 +20,10 @@ app.controller('login', ['$scope', function($scope) {
 		$scope.api.login($scope.credentials.email, $scope.credentials.password);
 	}
 
+	$scope.register = function() {
+		$scope.api.register($scope.credentials.email, $scope.credentials.password);
+	}
+
 	//api.login("dharun@ly.ht", "lol");
 	
 }])

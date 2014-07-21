@@ -13,6 +13,13 @@ app.factory("api", ["$http", "$cookies", function($http, $cookies) {
 				initialize();
 			});
 		},
+		register : function(email, password) {
+			if(result.session) return;
+			$http.post(root + "users", {email : email, password : password}).success(function(data) {
+				$cookies.session = data;
+				initialize();
+			});
+		},
 		events : function(type) {
 			return $http.get(root + "users/events/" + type + "?session=" + result.session);
 		}, 
