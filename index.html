@@ -19,6 +19,7 @@
 
 		<!-- Hub -->
 		<link rel="stylesheet" href="css/hub/layout.css" />
+		<link rel="stylesheet" href="css/hub/login.css" />
 		<link rel="stylesheet" href="css/hub/sms.css" />
 
 
@@ -38,7 +39,8 @@
 			</nav>
 		</header>	
 		<div class="root ng-cloak" ng-controller="root">
-			<div ng-include="'view/sms.html'"></div>
+			<div ng-if="api.session"  ng-include="'view/sms.html'"></div>
+			<div ng-if="!api.session" ng-include="'view/login.html'"></div>
 		</div>
 
 

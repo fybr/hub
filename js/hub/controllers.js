@@ -1,16 +1,32 @@
-app.controller('root', ['$scope', '$http', function($scope, $http) {
+app.controller('root', ['$scope', 'api', function($scope, api) {
 
 	$scope.data = {
 		sms : []
 	};
 
-
+	$scope.api = api;
+	//api.login("dharun@ly.ht", "lol");
 	
 }])
 
-app.controller('sms', ['$scope', '$http', 'api', function($scope, $http, api) {
+app.controller('login', ['$scope', function($scope) {
 
-	api.login("dharun@ly.ht", "lol");
+	$scope.credentials = {
+		email : "",
+		password : ""
+	};
+
+	$scope.login = function() {
+		$scope.api.login($scope.credentials.email, $scope.credentials.password);
+	}
+
+	//api.login("dharun@ly.ht", "lol");
+	
+}])
+
+app.controller('sms', ['$scope', '$http', function($scope, $http) {
+
+	var api = $scope.api;
 
 	var root = "http://api.fybr.ws/";
 	var notif = new Audio("/sounds/hollow.wav");

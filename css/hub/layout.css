@@ -46,10 +46,15 @@ header {
 }
 
 header .logo {
-	background: #45A7B9;
-	width: 110px;
+	width: 55px;
 	height: 100%;
 	float: left;
+	margin: 0px 5px 0px 25px;
+	background: url(/img/logo.png);
+	background-size: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
 }
 
 .root {
@@ -67,7 +72,7 @@ header nav {
 
 header nav ul li {
 	float: left;
-	width: 150px;
+	width: 100px;
 	text-align: center;
 	color: white;
 	font-size: 0.8em;

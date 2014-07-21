@@ -1,0 +1,11 @@
+<div ng-controller="login" class="login">
+	<div class="focus">
+		<img src="/img/logo.png"/>
+		<form ng-submit="login()">
+			<input placeholder="email" type="text" ng-model="credentials.email"/>
+			<input placeholder="password" type="password" ng-model="credentials.password"/>
+			<div ng-click="login()" class="button">Login</div>
+			<input type="submit" style="position: fixed; left: -9999px; width: 1px; height: 1px;"/>
+		</form>
+	</div>
+</div>

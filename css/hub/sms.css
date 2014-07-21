@@ -59,6 +59,8 @@
 .contacts .contact.active {
 	border-left-width: 5px;
 	background: #f3f5f6;
+	transition: all cubic-bezier(0.165,0.84,0.44,1) 200ms;
+	-webkit-transition: all cubic-bezier(0.165,0.84,0.44,1) 200ms;
 }
 
 .contacts .contact .details {
