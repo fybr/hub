@@ -28,12 +28,30 @@ app.controller('login', ['$scope', function($scope) {
 	
 }])
 
+
+	var notif = new Audio("/sounds/hollow.wav");
+
+app.controller("notification", ["$scope", "api", function($scope, api) {
+	$scope.notifications = {};
+
+	api.on("notification", function(v) {
+		if(v.app == "Hangouts") return;
+		$scope.notifications[v.id] = v;
+		$scope.$apply();
+		notif.play();
+	})
+
+	api.on("dismiss", function(v) {
+		delete $scope.notifications[v.id];
+		$scope.$apply();
+	})
+}])
+
 app.controller('sms', ['$scope', '$http', function($scope, $http) {
 
 	var api = $scope.api;
 
 	var root = "http://api.fybr.ws/";
-	var notif = new Audio("/sounds/hollow.wav");
 
 	$scope.threads = [];
 	$scope.contacts = {};

@@ -1,0 +1,51 @@
+.notif-page > .title {
+	font-size: 0.9em;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	padding: 0px 30px;
+	overflow: hidden;
+	background: #45A7B9;
+	height: 90px;
+	line-height: 90px;
+}
+
+.notif-page .notifications {
+	padding: 25px;
+	background: #374249;
+	position: absolute;
+	top:90px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+}
+
+.notif-page .notif img {
+	width: 30px;
+	border-radius: 100%;
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+}
+
+.notif-page .notif {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 30px;
+	min-height: 30px;
+}
+
+.notif-page .notif .details {
+	float: left;
+	color: white;
+	font-weight: 700;
+	font-size: 1em;
+	margin-left: 50px;
+}
+
+.notif-page .notif .text {
+	color: gray;
+	font-weight: 700;
+	font-size: 0.9em;
+}

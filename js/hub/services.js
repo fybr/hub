@@ -34,7 +34,6 @@ app.factory("api", ["$http", "$cookies", function($http, $cookies) {
 				subs[type] = cbs;
 			}
 			cbs.push(callback);
-			console.log(subs)
 		},
 		send : function(data) {
 			return $http.post(root + "users/devices/push?session=" + result.session, data);
@@ -46,10 +45,10 @@ app.factory("api", ["$http", "$cookies", function($http, $cookies) {
 	function initialize() {
 		result.session = $cookies.session;
 		if(!result.session) return;
-		console.log("Session: " + result.session);
 
 		var ws = new ReconnectingWebSocket("ws://api.fybr.ws/hose"); 
 		ws.onmessage = function(evt) {
+			console.log(evt.data);
 			var json = (JSON.parse(evt.data));
 			_.forEach(subs[json.type], function(cb) {
 				cb(json);

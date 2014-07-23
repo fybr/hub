@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="css/hub/layout.css" />
 	<link rel="stylesheet" href="css/hub/login.css" />
 	<link rel="stylesheet" href="css/hub/sms.css" />
+	<link rel="stylesheet" href="css/hub/notifications.css" />
 
 
 </head>
@@ -32,16 +33,17 @@
 			<nav>
 				<ul>
 					<li class="active">
-						<span>Texts</span>	
+						<span>Hub</span>	
 					</li>
 					<li >
-						<span>Notifications</span>	
+						<span>Settings</span>	
 					</li>
 				</ul>
 			</nav>
 		</header>	
 		<div class="root" ng-cloak >
-			<div ng-include="'view/sms.html'"></div>
+			<div class="notif-page" ng-include="'view/notifications.html'"></div>
+			<div class="sms-page" ng-include="'view/sms.html'"></div>
 		</div>
 	</div>
 

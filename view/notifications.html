@@ -1,0 +1,16 @@
+
+<div class="title">Notifications</div>
+<div ng-controller="notification" class="notifications">	
+	<div ng-repeat="(key, n) in notifications" class="notif">
+		<img ng-src="{{ n.icon }}"/ >
+		<div class="details">
+			<div class="center">
+				<div>
+					<div class="title">{{ n.app }}</div>
+					<div class="title">{{ n.extras.title }}</div>
+					<div class="text">{{ n.extras.text }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
