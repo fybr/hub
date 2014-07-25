@@ -45,6 +45,10 @@ app.controller("notification", ["$scope", "api", function($scope, api) {
 		delete $scope.notifications[v.id];
 		$scope.$apply();
 	})
+
+	$scope.dismiss = function(model) {
+		api.send({ id : model.id, type : "dismiss", tag : model.tag, name : model.name  })
+	}
 }])
 
 app.controller('sms', ['$scope', '$http', function($scope, $http) {

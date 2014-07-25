@@ -30,6 +30,7 @@
 }
 
 .notif-page .notif {
+	cursor: pointer;
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 30px;
