@@ -95,12 +95,12 @@ header nav ul li.active span {
 	top: 0px;
 	bottom: 0px;
 	right: 0px;
-	left: 400px;
+	left: 350px;
 }
 
 .notif-page {
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
-	width: 400px;
+	width: 350px;
 }

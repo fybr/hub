@@ -47,6 +47,7 @@ app.controller("notification", ["$scope", "api", function($scope, api) {
 	})
 
 	$scope.dismiss = function(model) {
+		model.dismiss = true;
 		api.send({ id : model.id, type : "dismiss", tag : model.tag, name : model.name  })
 	}
 }])

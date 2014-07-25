@@ -1,7 +1,7 @@
 
 <div class="title">Notifications</div>
 <div ng-controller="notification" class="notifications">	
-	<div ng-click="dismiss(n)" ng-repeat="(key, n) in notifications" class="notif">
+	<div ng-click="dismiss(n)" ng-class="{ 'dismiss' : n.dismiss }" ng-repeat="(key, n) in notifications" class="notif">
 		<img ng-src="{{ n.icon }}"/ >
 		<div class="details">
 			<div class="center">
