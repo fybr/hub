@@ -45,6 +45,11 @@ app.controller("notification", ["$scope", "api", function($scope, api) {
 		delete $scope.notifications[v.id];
 		$scope.$apply();
 	})
+
+	$scope.dismiss = function(model) {
+		model.dismiss = true;
+		api.send({ id : model.id, type : "dismiss", tag : model.tag, name : model.name  })
+	}
 }])
 
 app.controller('sms', ['$scope', '$http', function($scope, $http) {
@@ -96,7 +101,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 				unread : 0, 
 				id : model.thread, 
 				messages : [], 
-				priority : 0,
+				last : 0,
 			};
 			$scope.threads.push(thread);
 		}
@@ -120,6 +125,9 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 			notif.play();
 		}
 
+		if(message.from == "me")
+			thread.unread = 0;
+
 		message.texts.push(model.message);
 		thread.date = (moment(model.created).format("MMM Do"));
 		thread.last = model.id;
@@ -136,6 +144,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 	api.events("contact").success(function(contacts) {
 		_.forEach(contacts, function(value) {
 			$scope.contacts[value.number] = value;
+			$scope.threads.push({ unread : 0, id : value.number, messages : [], last : -1});
 		});
 
 		api.events("sms").success(function(texts) {

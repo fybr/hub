@@ -95,12 +95,31 @@ header nav ul li.active span {
 	top: 0px;
 	bottom: 0px;
 	right: 0px;
-	left: 400px;
+	left: 0px;
+	transition: all cubic-bezier(0.165,0.84,0.44,1) 300ms;
+	-webkit-transition: all cubic-bezier(0.165,0.84,0.44,1) 300ms;
+	z-index: 200;
 }
 
 .notif-page {
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
-	width: 400px;
+	width: 350px;
+	z-index: 100;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+@media only screen and (min-width : 1350px) {
+
+	.sms-page {
+		left: 350px;
+	}
+
+	.notif-page {
+	}
+
 }

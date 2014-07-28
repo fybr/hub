@@ -30,10 +30,13 @@
 }
 
 .notif-page .notif {
+	cursor: pointer;
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 30px;
 	min-height: 30px;
+	transition: all cubic-bezier(0.165,0.84,0.44,1) 300ms;
+	-webkit-transition: all cubic-bezier(0.165,0.84,0.44,1) 300ms;
 }
 
 .notif-page .notif .details {
@@ -48,4 +51,8 @@
 	color: gray;
 	font-weight: 700;
 	font-size: 0.9em;
+}
+
+.notif-page .notif.dismiss {
+	opacity: 0.3;
 }

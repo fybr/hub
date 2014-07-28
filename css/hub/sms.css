@@ -1,11 +1,12 @@
 .sms-page .contacts {
 	position: absolute;
-	width: 500px;
+	width: 110px;
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
 	background: #FFFFFF;
 	border-right: 1px solid #EFEEEE;
+	overflow-y: scroll;
 }
 
 .sms-page .contacts .title {
@@ -37,6 +38,7 @@
 	transition: all cubic-bezier(0.165,0.84,0.44,1) 200ms;
 	-webkit-transition: all cubic-bezier(0.165,0.84,0.44,1) 200ms;
 	cursor: pointer;
+	display: none;
 }
 
 .sms-page .contacts .title .new:active {
@@ -69,6 +71,7 @@
 	padding-right: 60px;
 	width: 100%;
 	position: relative;
+	display: none;
 }
 
 .sms-page .contacts .contact .details .date {
@@ -150,12 +153,13 @@
 
 
 .sms-page .thread {
+	background: white;
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
 	border-right: 1px solid #DDD;
 	right: 0px;
-	left: 500px;
+	left: 110px;
 	overflow-y: auto;
 }
 
@@ -275,4 +279,18 @@
 	padding: 15px;
 	border-radius: 6px;
 	height: 100%;
+}
+
+@media only screen and (min-width : 768px) {
+	.sms-page .contacts {
+		width: 500px;
+	}
+
+	.sms-page .contacts .contact .details {
+		display: block;
+	}
+
+	.sms-page .thread {
+		left: 500px;
+	}	
 }
