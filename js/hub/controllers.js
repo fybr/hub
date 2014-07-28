@@ -125,6 +125,9 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 			notif.play();
 		}
 
+		if(message.from == "me")
+			thread.unread = 0;
+
 		message.texts.push(model.message);
 		thread.date = (moment(model.created).format("MMM Do"));
 		thread.last = model.id;

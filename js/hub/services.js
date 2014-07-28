@@ -53,6 +53,8 @@ app.factory("api", ["$http", "$cookies", function($http, $cookies) {
 			_.forEach(subs[json.type], function(cb) {
 				cb(json);
 			})
+		};
+		ws.onclose = function(evt) {
 		}
 	}
 
