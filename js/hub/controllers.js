@@ -101,7 +101,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 				unread : 0, 
 				id : model.thread, 
 				messages : [], 
-				priority : 0,
+				last : 0,
 			};
 			$scope.threads.push(thread);
 		}
@@ -144,6 +144,7 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 	api.events("contact").success(function(contacts) {
 		_.forEach(contacts, function(value) {
 			$scope.contacts[value.number] = value;
+			$scope.threads.push({ unread : 0, id : value.number, messages : [], last : -1});
 		});
 
 		api.events("sms").success(function(texts) {

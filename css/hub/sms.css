@@ -6,6 +6,7 @@
 	left: 0px;
 	background: #FFFFFF;
 	border-right: 1px solid #EFEEEE;
+	overflow-y: scroll;
 }
 
 .sms-page .contacts .title {
@@ -37,6 +38,7 @@
 	transition: all cubic-bezier(0.165,0.84,0.44,1) 200ms;
 	-webkit-transition: all cubic-bezier(0.165,0.84,0.44,1) 200ms;
 	cursor: pointer;
+	display: none;
 }
 
 .sms-page .contacts .title .new:active {
