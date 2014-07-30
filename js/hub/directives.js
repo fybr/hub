@@ -12,15 +12,17 @@ app.directive('ngEnter', function() {
     };
 });
 
-app.directive('scroll', function() {
+app.directive('scroll', ["$timeout", function($timeout) {
     return function(scope, element, attrs) {
         var e = element[0];
-        scope.$watch(function() {
+        scope.$watch(attrs.scroll, function() {
             console.log('lol');
-            e.scrollTop = e.scrollHeight;
+            $timeout(function() {
+                e.scrollTop = e.scrollHeight;
+            }, 1);
         });
     };
-});
+}]);
 
 app.directive('error', function() {
     return function(scope, element, attrs) {
