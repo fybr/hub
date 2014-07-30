@@ -140,6 +140,9 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 
 		var parsed = emoji(model.message);
 		message.texts.push(parsed);
+		thread.recent = parsed;
+		if(message.from == "me")
+			thread.recent = "You: " + thread.recent;
 		thread.date = (moment(model.created).format("MMM Do"));
 		thread.last = model.id;
 

@@ -59,7 +59,6 @@ app.directive("raw", [function() {
     return function(scope, element, attr) {
         var cancel = scope.$watch(attr.raw, function(nv) {
             element.html(nv);
-            cancel();
         })
     }
 }])
