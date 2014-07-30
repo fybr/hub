@@ -55,3 +55,9 @@ app.directive("animate", [function() {
         })
     }
 }]);
+
+app.directive("emoji", [function() {
+    return function(scope, element, attr) {
+        parseEmoji(element[0]);
+    }
+}])
