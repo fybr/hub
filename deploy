@@ -1,2 +1,4 @@
 #!/bin/bash
-scp -r * dharun@jarvis.systems:/opt/fybr/hub/
+pellet
+scp -r compiled/* dharun@jarvis.systems:/opt/fybr/hub/
+rm -rf compiled/
