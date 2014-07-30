@@ -48,7 +48,6 @@ app.factory("api", ["$http", "$cookies", function($http, $cookies) {
 
 		var ws = new ReconnectingWebSocket("ws://api.fybr.ws/hose/" + result.session); 
 		ws.onmessage = function(evt) {
-			console.log(evt.data);
 			var json = (JSON.parse(evt.data));
 			_.forEach(subs[json.type], function(cb) {
 				cb(json);
