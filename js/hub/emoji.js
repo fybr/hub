@@ -79,7 +79,6 @@
     var PATTERN = /([\ud800-\udbff])([\udc00-\udfff])/g;
     var replacement = value;
     var matches = value.match(PATTERN);
-    console.log(matches);
     if (matches) {
       replacement = value.replace(PATTERN, function (match, p1, p2) {
         var codepoint = surrogatePairToCodepoint(p1.charCodeAt(0), p2.charCodeAt(0)),
