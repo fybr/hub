@@ -54,6 +54,14 @@ app.controller("notification", ["$scope", "api", function($scope, api) {
 	}
 }])
 
+app.controller("battery", ["$scope", "api", function($scope, api) {
+	
+	api.on("battery", function(v) {
+		console.log(v);
+	})
+
+}])
+
 app.controller('sms', ['$scope', '$http', function($scope, $http) {
 
 	var api = $scope.api;
