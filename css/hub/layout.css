@@ -123,3 +123,8 @@ header nav ul li.active span {
 	}
 
 }
+
+.emoji {
+	width: 1.4em;
+	vertical-align: top;
+}

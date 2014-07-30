@@ -4,6 +4,8 @@ app.controller('root', ['$scope', 'api', function($scope, api) {
 		sms : []
 	};
 
+	$scope.emoji = emoji;
+
 	$scope.api = api;
 	//api.login("dharun@ly.ht", "lol");
 	

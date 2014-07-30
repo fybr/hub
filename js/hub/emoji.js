@@ -67,9 +67,7 @@
    */
    function getImageForCodepoint(hex) {
     var img = document.createElement('IMG');
-
-    img.style.width = "1.4em";
-    img.style.verticalAlign = "top";
+    img.setAttribute("class", "emoji")
     img.src = "//" + IMAGE_HOST + IMAGE_PATH + hex + IMAGE_EXT;
 
     return img;
