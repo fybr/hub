@@ -6,13 +6,13 @@
 		</div>
 		<div ng-class="{ active : active == thread }" ng-click="activate(thread)" class="contact" ng-repeat="thread in threads | orderBy:['last']:true ">
 			<div class="wrap">
-				<img error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" class="circle" ng-src="{{ contacts[thread.id].picture }}" />
+				<img error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" class="circle" contact-picture="thread.id" />
 				<div ng-class="{show : thread.unread > 0}" class="circle unread" > {{ thread.unread }} </div>
 			</div>
 			<div class="details">
 				<div class="name">{{contacts[thread.id].name}}</div>
 				<div class="number">{{  thread.id }}</div>
-				<div emoji="getLast(thread)" class="preview"></div>
+				<div raw="getLast(thread)" class="preview"></div>
 				<div class="date">{{ thread.date }}</div>
 			</div>
 		</div>
@@ -20,11 +20,11 @@
 
 	<div class="thread">
 		<div class="info">{{ contacts[active.id].name }}</div>
-		<div scroll class="scroll" ng-if="active">
+		<div scroll="active.id" class="scroll" ng-if="active">
 			<div ng-repeat="message in active.messages" ng-class="{me : message.from == 'me', other : message.from != 'me'}" class="message reset-animation">
-				<img animate="message.animate" error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" ng-src="{{ contacts[message.from].picture }} " />
+				<img animate="message.animate" error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" contact-picture="message.from" />
 				<div class="texts">
-					<div class="bubble" emoji="text" ng-repeat="text in message.texts track by $index"></div>
+					<div class="bubble" raw="text" ng-repeat="text in message.texts track by $index"></div>
 				</div>
 			</div>
 		</div>

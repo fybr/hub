@@ -31,7 +31,7 @@ app.controller('login', ['$scope', function($scope) {
 }])
 
 
-	var notif = new Audio("/sounds/hollow.wav");
+var notif = new Audio("/sounds/hollow.wav");
 
 app.controller("notification", ["$scope", "api", function($scope, api) {
 	$scope.notifications = {};
@@ -138,7 +138,8 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 		if(message.from == "me")
 			thread.unread = 0;
 
-		message.texts.push(model.message);
+		var parsed = emoji(model.message);
+		message.texts.push(parsed);
 		thread.date = (moment(model.created).format("MMM Do"));
 		thread.last = model.id;
 

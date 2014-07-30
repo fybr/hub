@@ -16,8 +16,7 @@ app.directive('scroll', function() {
     return function(scope, element, attrs) {
         var e = element[0];
         scope.$watch(function() {
-            return e.scrollHeight;
-        }, function(nv, ov) {
+            console.log('lol');
             e.scrollTop = e.scrollHeight;
         });
     };
@@ -56,11 +55,22 @@ app.directive("animate", [function() {
     }
 }]);
 
-app.directive("emoji", [function() {
+app.directive("raw", [function() {
     return function(scope, element, attr) {
-        scope.$watch(attr.emoji, function(nv) {
+        var cancel = scope.$watch(attr.raw, function(nv) {
             element.html(nv);
-            element.html(emoji(nv));
+            cancel();
         })
     }
 }])
+
+app.directive("contactPicture", function() {
+    return function(scope, element, attr) {
+        var cancel = scope.$watch(attr.contactPicture, function(nv) {
+            var contact = scope.contacts[nv];
+            if(contact == undefined) return;
+            element.attr("src", scope.contacts[nv].picture);
+            cancel();
+        })
+    }
+});
