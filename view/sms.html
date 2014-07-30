@@ -24,7 +24,7 @@
 			<div ng-repeat="message in active.messages" ng-class="{me : message.from == 'me', other : message.from != 'me'}" class="message reset-animation">
 				<img animate="message.animate" error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" ng-src="{{ contacts[message.from].picture }} " />
 				<div class="texts">
-					<div class="bubble" emoji ng-repeat="text in message.texts track by $index"> {{ text }} </div>
+					<div class="bubble" emoji="text" ng-repeat="text in message.texts track by $index"></div>
 				</div>
 			</div>
 		</div>

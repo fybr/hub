@@ -58,6 +58,9 @@ app.directive("animate", [function() {
 
 app.directive("emoji", [function() {
     return function(scope, element, attr) {
-        parseEmoji(element[0]);
+        scope.$watch(attr.emoji, function(nv) {
+            element.html(nv);
+            element.html(emoji(nv));
+        })
     }
 }])
