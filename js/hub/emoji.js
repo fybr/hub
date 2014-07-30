@@ -90,9 +90,7 @@
   // Call everything we've defined
 
   return function(text) {
-    if (!doesSupportEmoji()) {
       return emojiReplace(text);
-    }
   }
 
 })();
