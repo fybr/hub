@@ -20,7 +20,7 @@
 
 	<div class="thread">
 		<div class="info">{{ contacts[active.id].name }}</div>
-		<div scroll="active.id" class="scroll" ng-if="active">
+		<div scroll="active.last + active.id" class="scroll" ng-if="active">
 			<div ng-repeat="message in active.messages" ng-class="{me : message.from == 'me', other : message.from != 'me'}" class="message reset-animation">
 				<img animate="message.animate" error="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" contact-picture="message.from" />
 				<div class="texts">
