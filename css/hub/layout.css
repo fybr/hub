@@ -110,7 +110,7 @@ header nav ul li.active span {
 }
 
 ::-webkit-scrollbar { 
-    display: none; 
+	display: none; 
 }
 
 @media only screen and (min-width : 1350px) {
@@ -127,4 +127,49 @@ header nav ul li.active span {
 .emoji {
 	width: 1.4em;
 	vertical-align: top;
+}
+
+.battery-page {
+	float: right;
+	position: relative;
+}
+
+.battery-page .wrap {
+	width: 54px;
+	height: 25px;
+	margin: 23px;
+	position: relative;
+	border-radius: 2px;
+	background: #45A7B9;
+	display: inline-block;
+}
+
+.battery-page .wrap:after {
+	content: '';
+	display: block;
+	background: #45A7B9;
+	position: absolute;
+	height: 13px;
+	width: 3px;
+	right: -3px;
+	top: 6px;
+	border-radius: 0px 2px 2px 0px;
+}
+
+.battery-page .fill {
+	background: #4C8A97;
+	font-size: 0.5em;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;;
+	margin: 4px;
+	right: 0%;
+	line-height: 17px;
+	color: white;
+	transition: all linear 500ms;
+	-webkit-transition: all linear 500ms;
+	overflow: hidden;
 }

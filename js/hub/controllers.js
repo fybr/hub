@@ -55,9 +55,12 @@ app.controller("notification", ["$scope", "api", function($scope, api) {
 }])
 
 app.controller("battery", ["$scope", "api", function($scope, api) {
-	
+	api.events("battery").success(function(levels) {
+		$scope.level = _.last(levels).level;
+	});
 	api.on("battery", function(v) {
-		console.log(v);
+		$scope.level = v.level;
+		$scope.$apply();
 	})
 
 }])
@@ -128,6 +131,10 @@ app.controller('sms', ['$scope', '$http', function($scope, $http) {
 				animate : 0,
 			}
 			thread.messages.push(message);
+		}
+
+		if(thread.messages.length > 50) {
+			thread.messages.shift();
 		}
 
 		if(message.from != "me" && initialized) {
